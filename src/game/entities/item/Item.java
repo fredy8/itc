@@ -32,7 +32,7 @@ public abstract class Item extends Entity
 	protected void parseItem(XMLParser parser)
 	{
 		NAME = parser.getAttribute(getClass().getSimpleName(), "name");
-		DESCRIPTION = parser.getAttribute(getClass().getSimpleName(), "desc");
+		DESCRIPTION = parser.getAttribute(getClass().getSimpleName(), "description");
 	}
 
 	public Item(int id, Point pos)

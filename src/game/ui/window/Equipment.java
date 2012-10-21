@@ -1,16 +1,11 @@
 package game.ui.window;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.util.HashMap;
-import java.util.Map;
-
-import game.Main;
 import game.entities.item.EquipItem;
 import game.entities.item.EquipItem.EquipType;
-import game.entities.superentities.Player;
 import game.structure.MapManager;
-import game.util.Util;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.util.Dimension;

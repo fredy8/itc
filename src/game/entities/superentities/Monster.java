@@ -12,7 +12,6 @@ import static org.lwjgl.opengl.GL11.glVertex2f;
 import game.entities.Entity;
 import game.entities.item.Item;
 import game.features.Quest;
-import game.features.Skill;
 import game.structure.Slot;
 import game.util.Util;
 import game.util.XMLParser;
@@ -36,7 +35,7 @@ public class Monster extends SuperEntity
 
 	// TODO? auto update on its own thread?
 
-	private int exp, movePeriod, moveTimer = 0, hp, maxHP;
+	private int exp, movePeriod, moveTimer = 0, hp, maxHP, minGold, maxGold;
 	private String name;
 	private boolean angry = false, dead = false, respawn;
 	private Map<Integer, Integer> dropList = new HashMap<Integer, Integer>();
@@ -68,9 +67,9 @@ public class Monster extends SuperEntity
 		setDamage(Integer.parseInt(parser.getAttribute("Monster", "damage")));
 		setMaxHP(Integer.parseInt(parser.getAttribute("Monster", "maxHP")));
 		exp = Integer.parseInt(parser.getAttribute("Monster", "exp"));
+		minGold = Integer.parseInt(parser.getAttribute("Monster", "minGold"));
+		maxGold = Integer.parseInt(parser.getAttribute("Monster", "maxGold"));
 		
-		
-
 		List<java.util.Map<String, String>> drops = parser.getChildrenAttributes("Monster/drops");
 		for (java.util.Map<String, String> data : drops)
 		{
@@ -292,6 +291,7 @@ public class Monster extends SuperEntity
 		}
 
 		getMap().getPlayer().gainExp(getExp());
+		getMap().getPlayer().gainGold(getGold());
 
 		for (Quest q : getMap().getPlayer().getActiveQuests())
 			q.monsterKill(id());
@@ -352,4 +352,8 @@ public class Monster extends SuperEntity
 		this.maxHP = maxHP;
 	}
 
+	public int getGold(){
+		return new Random().nextInt(maxGold-minGold) + minGold;
+	}
+	
 }

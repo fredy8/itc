@@ -123,10 +123,6 @@ public abstract class SuperEntity extends Entity
 	{
 		Util.renderEntity(getTexture(), Util.pointArithmetic(-1, position(), getMap().getOffSet()), getRenderOffset(),
 				getRenderSize(), 0, getFacingDir() != LEFT ? 0 : 1, 0); //flip texture when facing left
-	}
-
-	public void midRender()
-	{
 		for (Skill s : skills)
 			s.render();
 	}

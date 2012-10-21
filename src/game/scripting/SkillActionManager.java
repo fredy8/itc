@@ -96,7 +96,6 @@ public class SkillActionManager extends AbstractScriptManager
 
 	public void play(Point p)
 	{
-		System.out.println(Util.addRelPoints(origin, p, facingDir));
 		activeAttack.play(Util.addRelPoints(origin, p, facingDir));
 	}
 }

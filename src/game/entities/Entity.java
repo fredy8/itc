@@ -68,10 +68,6 @@ public abstract class Entity extends GameObject
 					getRenderSize());
 	}
 
-	public void midRender()
-	{
-	}
-
 	public void UIRender()
 	{
 	}

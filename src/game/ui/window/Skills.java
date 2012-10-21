@@ -1,10 +1,9 @@
 package game.ui.window;
 
+import game.util.Util;
+
 import java.awt.Color;
 import java.awt.Font;
-
-import game.Main;
-import game.util.Util;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.util.Dimension;

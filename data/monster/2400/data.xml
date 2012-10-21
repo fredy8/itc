@@ -1,4 +1,4 @@
-<Monster name="Test Monster" damage="5" maxHP="50" exp="5">
+<Monster name="Test Monster" damage="5" maxHP="50" exp="3" minGold="0" maxGold="5">
     <drops>
         <item id="6300" chance="30"/>
         <item id="6301" chance="30"/>
